@@ -1,0 +1,28 @@
+@layout('preguntas')
+	@section('content')
+		<ul class="list-group">
+
+		<form action="/validar" method="POST">
+		{{ csrfField() }}	
+			@each(pregunta in preguntas)
+
+				<p>
+					{{ pregunta }}
+				</p>
+
+				<br>
+				<select name = "respuestas" >
+					@each(respuesta in respuestas[$loop.index])
+						<option value= '{{respuesta}}' >{{respuesta}}</option>
+					
+					@endeach
+				</select>
+
+			@endeach
+			<br>
+			<button type="submit" class="btn btn-primary" >
+				Resultado
+			</button>
+		</form>
+		</ul>
+	@endsection

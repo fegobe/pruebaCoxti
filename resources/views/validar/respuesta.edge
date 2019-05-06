@@ -1,0 +1,11 @@
+@layout('preguntas')
+	@section('content')
+		@if(es_valido==1)
+	    	<p style="color:green;"> USUARIO VALIDADO CORRECTAMENTE </p>
+
+		@else
+
+	  		<p style="color:red;"> FALLO LA VALIDACION DEL USUARIO </p>
+		@endif
+		<a class="btn btn-success" href="/">Salir</a>
+	@endsection 
